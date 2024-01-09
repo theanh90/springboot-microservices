@@ -1,0 +1,16 @@
+package com.programming.techie.inventoryservice.service;
+
+import com.programming.techie.inventoryservice.repository.InventoryRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service
+@RequiredArgsConstructor
+public class InventoryService {
+    final private InventoryRepository inventoryRepository;
+    @Transactional(readOnly = true)
+    public boolean isInStock(String skuCode) {
+        return inventoryRepository.findBySkuCode(skuCode).isPresent();
+    }
+}
