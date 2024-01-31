@@ -1,3 +1,5 @@
 microservices-parent/inventory-service/target
 microservices-parent/order-service/target
 microservices-parent/product-service/target
+microservices-parent/api-gateway/target
+microservices-parent/discovery-server/target
